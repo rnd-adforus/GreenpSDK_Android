@@ -1,4 +1,4 @@
-# GreenpOfferwall SDK (v3) For Android
+# GreenpOfferwall SDK AOS (v3) For Extend
 ## 변경사항
 
 ### 3.1.2.0-UAD
