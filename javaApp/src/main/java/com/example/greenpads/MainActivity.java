@@ -48,6 +48,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void onClick(View view) {
 
         OfferwallBuilder builder = GreenpReward.getOfferwallBuilder();
+
         if(builder == null) {
             return;
         }
