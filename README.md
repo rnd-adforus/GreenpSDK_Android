@@ -21,4 +21,5 @@
 - [SDK 연동 가이드](https://github.com/rnd-adforus/GreenpSDK_Android/wiki/Greenp-Offerwall-Android-v3-For-Extend-%EC%97%B0%EB%8F%99%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ### 기타 플랫폼
+- [Flutter](https://github.com/rnd-adforus/GreenpSDK_Android/wiki/GreenpOfferwall-forExtends-(v3)-SDK-Flutter-(AOS)-%EC%A7%80%EC%9B%90-%EA%B0%80%EC%9D%B4%EB%93%9C)
 - [ReactNative](https://github.com/rnd-adforus/GreenpSDK_Android/wiki/ReactNative-GreenpOfferwall-forExtends-SDK-%EA%B0%80%EC%9D%B4%EB%93%9C)
