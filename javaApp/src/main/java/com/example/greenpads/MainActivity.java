@@ -1,14 +1,20 @@
 package com.example.greenpads;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
-
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.adforus.sdk.greenp.v3.GreenpReward;
 import com.adforus.sdk.greenp.v3.OfferwallBuilder;
@@ -19,12 +25,17 @@ import java.util.zip.Checksum;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
 
-    private final String appUserId = "someUser";
-    private final String appUniqKey = "GreenpOfferwall"; // 매체고유키
-    private final String appCode = "ZBhFaS5kxE";
+    private final String appUniqKey = "ZBhFaS5kxE";
+
+    private String appUserId = "someUser13";
+
+    private EditText appUid;
 
     private LinearLayout bannerWrapper;
     private LinearLayout miniBannerWrapper;
+
+    private Switch fontSwitch;
+    public static Drawable mCoinImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +46,30 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         bannerWrapper = findViewById(R.id.banner_wrapper);
         miniBannerWrapper = findViewById(R.id.container);
 
+        (findViewById(R.id.btn_init)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initOfferwall();
+            }
+        });
         (findViewById(R.id.show_offerwall)).setOnClickListener(this);
         (findViewById(R.id.show_popup)).setOnClickListener(this);
         (findViewById(R.id.req_320x50)).setOnClickListener(this);
         (findViewById(R.id.req_mini)).setOnClickListener(this);
         (findViewById(R.id.req_fragment)).setOnClickListener(this);
 
-        initOfferwall();
+        fontSwitch = findViewById(R.id.switch_font);
+        appUid = findViewById(R.id.app_uid);
     }
+
+//    private static void scaleImage (Context context) {
+//
+//        int px = ScreenUtil.dpToPixel(context, 15);
+//
+//        Bitmap b = ((BitmapDrawable) mCoinImg).getBitmap();
+//        Bitmap bitmapResized = Bitmap.createScaledBitmap(b, px, px, false);
+//        mCoinImg = new BitmapDrawable(context.getResources(), bitmapResized);
+//    }
 
     @Override
     public void onClick(View view) {
@@ -52,106 +79,108 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             return;
         }
 
-        builder.setAppUniqKey(appUniqKey);
-        builder.setUseGreenpFontStyle(true); // 그린피 폰트 사용여부 ( default : false )
+        builder.setAppUniqKey(appUniqKey); // 매체고유키
+        builder.setUseGreenpFontStyle(!fontSwitch.isChecked());
 
-        if(view.getId() == R.id.show_offerwall) {
+        switch (view.getId()) {
 
-            builder.showOfferwall(MainActivity.this);
+            case R.id.show_offerwall:
+                builder.showOfferwall(MainActivity.this);
 
-        } else if(view.getId() == R.id.show_popup) {
+                break;
 
-            builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_POPUP, new OfferwallBuilder.OnRequestBannerListener() {
-                @Override
-                public void onResult(boolean b, String s, GreenpBanner banner) {
-                    if(b) {
-                        banner.showPopupBanner();
-                    } else {
-                        Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
-        } else if(view.getId() == R.id.req_320x50) {
-
-            builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_320x50, new OfferwallBuilder.OnRequestBannerListener() {
-                @Override
-                public void onResult(boolean b, String s, GreenpBanner banner) {
-                    if(b) {
-
-                        if(bannerWrapper.getChildCount() > 0) {
-                            bannerWrapper.removeAllViews();
+            case R.id.show_popup:
+                builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_POPUP, new OfferwallBuilder.OnRequestBannerListener() {
+                    @Override
+                    public void onResult(boolean b, String s, GreenpBanner banner) {
+                        if(b) {
+                            banner.showPopupBanner();
+                        } else {
+                            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                         }
-
-                        bannerWrapper.addView(banner.getView());
-                    } else {
-                        Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                     }
+                });
+                break;
+
+            case R.id.req_320x50:
+
+                if(bannerWrapper.getChildCount() > 0) {
+                    bannerWrapper.removeAllViews();
                 }
-            });
 
-        } else if(view.getId() == R.id.req_mini) {
-
-            builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_MINI, new OfferwallBuilder.OnRequestBannerListener() {
-                @Override
-                public void onResult(boolean b, String s, GreenpBanner banner) {
-                    if(b) {
-
-                        if(miniBannerWrapper.getChildCount() > 0) {
-                            miniBannerWrapper.removeAllViews();
+                builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_320x50, new OfferwallBuilder.OnRequestBannerListener() {
+                    @Override
+                    public void onResult(boolean b, String s, GreenpBanner banner) {
+                        if(b) {
+                            bannerWrapper.addView(banner.getView());
+                        } else {
+                            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                         }
-
-                        miniBannerWrapper.addView(banner.getView());
-                    } else {
-                        Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                     }
+                });
+                break;
+            case R.id.req_mini:
+
+                if(miniBannerWrapper.getChildCount() > 0) {
+                    miniBannerWrapper.removeAllViews();
                 }
-            });
 
-        } else if(view.getId() == R.id.req_fragment) {
-
-            builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_FRAGMENT, new OfferwallBuilder.OnRequestBannerListener() {
-                @Override
-                public void onResult(boolean b, String s, GreenpBanner banner) {
-                    if(b) {
-
-                        if(miniBannerWrapper.getChildCount() > 0) {
-                            miniBannerWrapper.removeAllViews();
+                builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_MINI, new OfferwallBuilder.OnRequestBannerListener() {
+                    @Override
+                    public void onResult(boolean b, String s, GreenpBanner banner) {
+                        if(b) {
+                            miniBannerWrapper.addView(banner.getView());
+                        } else {
+                            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                         }
-
-                        Fragment fragment = banner.getFragment();
-                        if(fragment == null)
-                            return;
-
-                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.container, fragment, "");
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commitAllowingStateLoss();
-
-                    } else {
-                        Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                     }
+                });
+
+                break;
+
+            case R.id.req_fragment:
+
+                if(miniBannerWrapper.getChildCount() > 0) {
+                    miniBannerWrapper.removeAllViews();
                 }
-            });
+
+                builder.requestBanner(MainActivity.this, OfferwallBuilder.BANNER_FRAGMENT, new OfferwallBuilder.OnRequestBannerListener() {
+                    @Override
+                    public void onResult(boolean b, String s, GreenpBanner banner) {
+                        if(b) {
+
+                            Fragment fragment = banner.getFragment();
+
+                            FragmentManager fragmentManager = getSupportFragmentManager();
+                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.container, fragment, fragment.getTag());
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commitAllowingStateLoss();
+
+                        } else {
+                            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                break;
         }
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+//        finish();
     }
 
     private void initOfferwall() {
 
-        /**greenp_v3-debug.aar
-         * @params
-         *   - Context context
-         *   - String appCode ( 발급받은 매체 코드 )
-         *   - String userId ( 매체사 유저 아이디 )
-         *   - OnAdbcRewardListener initListener
-         * */
-        GreenpReward.init(MainActivity.this, appCode, appUserId, new GreenpReward.OnGreenpRewardListener() {
+        appUserId = appUid.getText().toString();
+        if(appUserId.isEmpty()) {
+            appUserId = "someUser13";
+        }
+
+        GreenpReward.init(MainActivity.this, "ZBhFaS5kxE", appUserId, new GreenpReward.OnGreenpRewardListener() {
             @Override
             public void onResult(boolean result, String msg) {
 
