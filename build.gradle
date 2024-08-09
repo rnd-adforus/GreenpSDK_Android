@@ -14,13 +14,13 @@ allprojects {
         google()
         mavenCentral()
         mavenLocal()
-//        maven{
-//            url 'http://localhost:8081/repository/greenp_v3/'
-//            allowInsecureProtocol true
-//        }
-        maven {
-            url "https://nexus.adforus.com/repository/greenp/"
+        maven{
+            url 'http://localhost:8081/repository/greenp_v3/'
+            allowInsecureProtocol true
         }
+//        maven {
+//            url "https://nexus.adforus.com/repository/greenp/"
+//        }
     }
 }
 
