@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.greenpads.MainActivity"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/app_uid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:hint="app_uid"/>
+
+        <Button
+            android:id="@+id/btn_init"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="초기화"/>
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/switch_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:checked="true"
+        android:text="시스템 폰트 사용 "
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <LinearLayout
         android:id="@+id/ad_wall_button_container"
@@ -19,14 +50,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="오퍼월 실행"/>
+            android:text="오퍼월"/>
 
         <Button
             android:id="@+id/show_popup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="팝업배너 실행"/>
+            android:text="팝업배너"/>
 
         <Button
             android:id="@+id/req_320x50"
@@ -41,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="미니 배너"/>
+
         <Button
             android:id="@+id/req_fragment"
             android:layout_width="wrap_content"
@@ -59,8 +91,8 @@
             android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="60dp"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent"/>
