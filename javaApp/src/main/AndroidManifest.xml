@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <meta-data-->
+<!--        <meta-data 아래는 테스트 코드입니다. 반드시 value를 실제 APPLICATION_ID로 값을 변경하여 주세요!!!-->
 <!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
 <!--            android:value="ca-app-pub-3940256099942544~3347511713" />-->
     </application>

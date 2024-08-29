@@ -1,5 +1,9 @@
 ## ChangeLog
 
+### Version [3.4.2.0-UAD]
+#### FIX
+- UI 버그 픽스 
+
 ### Version [3.4.1.0-UAD]
 #### FIX
 - 미 사용 레거시 코드 정리
