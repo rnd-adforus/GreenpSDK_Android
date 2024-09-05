@@ -1,6 +1,9 @@
 # GreenpOfferwall SDK AOS (v3) For Extend
 ## 변경사항
 
+### 3.4.2.0-UAD
+- 색상 표시 영역과 관련한 UI 버그 픽스
+
 ### 3.4.1.0-UAD
 - 내부 코드 개선을 위한 레거시 코드 정리
   
