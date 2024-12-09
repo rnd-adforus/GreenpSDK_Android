@@ -24,8 +24,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity
-<!-- 테스트 APP ID 입니다. 배포시 반드시 수정하여 주세요!! -->
+        </activity>
+<!--  테스트 APP ID 입니다. 배포시 반드시 수정하여 주세요!! -->
 <!--        <meta-data-->
 <!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
 <!--            android:value="ca-app-pub-3940256099942544~3347511713" />-->
