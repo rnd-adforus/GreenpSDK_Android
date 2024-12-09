@@ -20,27 +20,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="오퍼월 실행"/>
-
-        <Button
-            android:id="@+id/show_popup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="팝업배너 실행"/>
-
-        <Button
-            android:id="@+id/req_320x50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="띠배너"/>
-
-        <Button
-            android:id="@+id/req_mini"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="미니 배너"/>
         <Button
             android:id="@+id/req_fragment"
             android:layout_width="wrap_content"

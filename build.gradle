@@ -13,9 +13,12 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        mavenLocal()
+//        mavenLocal()
+        maven{
+            url 'https://nexus.adforus.com/repository/greenp/'
+        }
         maven {
-            url "https://nexus.adforus.com/repository/greenp/"
+            url 'https://artifact.bytedance.com/repository/pangle/'
         }
     }
 }
