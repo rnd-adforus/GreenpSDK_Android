@@ -1,5 +1,10 @@
 # GreenpOfferwall SDK AOS (v3) For Extend
 ## 변경사항
+### 3.5.0 이상 Migration 안내 
+[!3.5.0]이상 부터는 별도의 SDK로 분리되었던 GreenpOfferwall SDK AOS (v3) For Extend가  
+GreenpOfferwall SDK AOS (v3) 와 함께 Dependency 추가 의존성으로 옵셔널하게 적용됩니다.! 
+
+[3.5.0v 이상 신규 버전 이동하기](https://github.com/rnd-adforus/GreenpSDK_Android)
 
 ### 3.4.2.0-UAD
 - 색상 표시 영역과 관련한 UI 버그 픽스
