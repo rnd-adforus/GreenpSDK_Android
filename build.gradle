@@ -17,9 +17,9 @@ allprojects {
         maven{
             url 'https://nexus.adforus.com/repository/greenp/'
         }
-        maven {
-            url 'https://artifact.bytedance.com/repository/pangle/'
-        }
+//        maven {
+//            url 'https://artifact.bytedance.com/repository/pangle/'
+//        }
     }
 }
 
