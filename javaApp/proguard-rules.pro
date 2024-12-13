@@ -21,3 +21,6 @@
 #-renamesourcefileattribute SourceFile
 -keep class com.adforus.sdk.greenp.v3.** { *; }
 -dontwarn com.adforus.sdk.greenp.v3.**
+
+-keep class com.adforus.sdk.adsu.** {*;}
+-dontwarn com.adforus.sdk.adsu.**
