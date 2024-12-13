@@ -1,4 +1,8 @@
 ## ChangeLog
+### Version [3.5.2]
+#### FIX
+- AdsU SDK 호출 오류 픽스 
+
 ### Version [3.5.1]
 #### FIX
 - 기 참여 이력이 소메뉴 전환 시 반영 되지 않고 다시 나타 나는 현상 픽스
