@@ -4,7 +4,7 @@
 ## 지원
 - 기본 요건
     - Gradle 7.0.1 이상 <br>
-      (AdsU SDK 추가 사용 시, 7.4.1 이상)
+      (AdsU SDK 추가 사용 시 7.4.1 이상)
     - minSdkVersion 21 이상 <br>
       (AdsU SDK 추가 사용 시 24 이상)
 
