@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                     Toast.makeText(getBaseContext(), "SDK가 초기화 되었습니다.", Toast.LENGTH_LONG).show();
                 } else {
                     isInitialize = false;
-                    Toast.makeText(getBaseContext(), "SDK가 초기화 되지 않았습니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "SDK가 초기화 되지 않았습니다.\n"+msg, Toast.LENGTH_LONG).show();
                     Log.e("tag", msg);
                 }
             }

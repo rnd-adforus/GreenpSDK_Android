@@ -1,4 +1,13 @@
 ## ChangeLog
+### Version [3.5.3]
+#### FIX
+- androidx.fragment.app.Fragment$InstantiationException 오류 수정
+- Android SDK 35 Target 정책에 맞추어 READ_MEDIA_IMAGES 권한 제거
+- Android SDK 35 Target 정책에 맞추어 Activity 레이아웃 영역이 status bar를 침범하지 않도록 정정
+- 다크모드 색상 테마 일부를 수정
+- 초기화 시 UserId, AppCode가 빈 문자열로 설정시 초기화 되지 않도록 수정
+- application 내 테마가 없어도 오퍼월이 동작되도록 오퍼월 Activity 테마를 지정
+
 ### Version [3.5.2]
 #### FIX
 - AdsU SDK 호출 오류 픽스 
