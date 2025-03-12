@@ -1,4 +1,8 @@
 ## ChangeLog
+### Version [3.5.4]
+#### FIX
+- (UAd SDK 적용 시)Goolge Application ID 확인 기능 오류 수정
+
 ### Version [3.5.3]
 #### FIX
 - androidx.fragment.app.Fragment$InstantiationException 오류 수정

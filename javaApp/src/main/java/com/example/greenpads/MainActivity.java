@@ -1,9 +1,12 @@
 package com.example.greenpads;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +20,7 @@ import com.adforus.sdk.greenp.v3.ui.banner.GreenpBanner;
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String appUserId = "someUser";
     private final String appUniqKey = "GreenpOfferwall"; // 매체고유키
@@ -32,6 +35,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String packageName = com.adforus.sdk.adsu.UAdConstant.UAD_PACKAGE_NAME;
+        SharedPreferences sharedPreferences = this.getSharedPreferences(packageName, Context.MODE_PRIVATE);
+        String result = sharedPreferences.getString("debug", "false");
+        Log.d("test-jennet", "SharedPreferences debug mode result : "+ result);
 
         miniBannerWrapper = findViewById(R.id.container);
 
