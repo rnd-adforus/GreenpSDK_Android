@@ -1,4 +1,8 @@
 ## ChangeLog
+### Version [3.5.5]
+#### FIX
+- 리워드 포인트 폰트 색상 그린피 어드민에서 설정하는 기능 추가
+
 ### Version [3.5.4]
 #### FIX
 - (UAd SDK 적용 시)Goolge Application ID 확인 기능 오류 수정

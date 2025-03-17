@@ -36,11 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String packageName = com.adforus.sdk.adsu.UAdConstant.UAD_PACKAGE_NAME;
-        SharedPreferences sharedPreferences = this.getSharedPreferences(packageName, Context.MODE_PRIVATE);
-        String result = sharedPreferences.getString("debug", "false");
-        Log.d("test-jennet", "SharedPreferences debug mode result : "+ result);
-
         miniBannerWrapper = findViewById(R.id.container);
 
         (findViewById(R.id.show_offerwall)).setOnClickListener(this);
