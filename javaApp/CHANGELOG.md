@@ -1,4 +1,8 @@
 ## ChangeLog
+### Version [3.5.6]
+#### FIX
+- Android OS 8 버전 버그 픽스
+
 ### Version [3.5.5]
 #### FIX
 - 리워드 포인트 폰트 색상 그린피 어드민에서 설정하는 기능 추가
