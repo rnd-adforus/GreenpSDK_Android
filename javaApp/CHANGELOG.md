@@ -1,4 +1,9 @@
 ## ChangeLog
+
+### Version [3.5.7]
+#### FIX
+- 문의하기 기능 입력 필수 값 정정
+
 ### Version [3.5.6]
 #### FIX
 - Android OS 8 버전 버그 픽스
