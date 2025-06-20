@@ -1,5 +1,11 @@
 ## ChangeLog
 
+### Version [3.5.9]
+#### FIX
+- Android SDK 35 이상 Target 화면 겹침 및 EditText 포커서블 비정상 동작 대응
+#### ADD
+- 문의하기 페이지 내 문의내용 포커싱에 입력 박스가 모두 보이도록 자동 스크롤링 기능 추가
+
 ### Version [3.5.8]
 #### FIX
 - 리소스 참조 안정화 코드 정정
