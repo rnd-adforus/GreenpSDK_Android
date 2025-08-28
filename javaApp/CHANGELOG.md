@@ -1,5 +1,11 @@
 ## ChangeLog
 
+### Version [4.0.0]
+#### FIX
+- 4v UI 전면 개편, 다크 모드 지원
+#### ADD
+- 프로필 입력 -> 이벤트 기능 변경
+
 ### Version [3.5.9]
 #### FIX
 - Android SDK 35 이상 Target 화면 겹침 및 EditText 포커서블 비정상 동작 대응
