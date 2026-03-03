@@ -2,11 +2,8 @@ package com.example.greenpads;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +13,7 @@ import android.widget.Toast;
 import com.adforus.sdk.greenp.v3.GreenpReward;
 import com.adforus.sdk.greenp.v3.OfferwallBuilder;
 import com.adforus.sdk.greenp.v3.ui.banner.GreenpBanner;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
