@@ -1,5 +1,14 @@
 ## ChangeLog
 
+### Version [4.2.0]
+#### ADD
+- 컬쳐랜드 로그인 옵션 적용 기능 지원
+
+#### FIX
+- 멀티 캠페인 포인트 텍스트 다국어 지원
+- 디바이스의 브라우저 앱 사용 가능 상태에 따라 UI 분기점 적용
+- 네트워크 광고 adapters(UAd, UPan, CubeX) 적용 시 NativeAd 타입의 광고 요소 중 텍스트가 null로 응답 될 때, NullPointException 대응 수정
+
 ### Version [4.1.0]
 #### ADD
 - 글로벌 기능 추가 (다국어, 국가별 캠페인 지원)
