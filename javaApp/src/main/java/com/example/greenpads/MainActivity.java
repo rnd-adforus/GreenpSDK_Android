@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private final String appUserId = "someUser";
     private final String appUniqKey = "GreenpOfferwall"; // 매체고유키
-    private final String appCode = "ZBhFaS5kxE";
+    private final String appCode = "dQz3ManLRB";
 
     private LinearLayout miniBannerWrapper;
 
