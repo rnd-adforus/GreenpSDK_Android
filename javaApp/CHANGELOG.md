@@ -1,5 +1,9 @@
 ## ChangeLog
 
+### Version [4.3.4]
+#### FIX
+- Gson 2.9.0 이하 환경에서 크래시(java.lang.AssertionError)가 발생하던 현상 수정
+
 ### Version [4.3.2]
 #### FIX
 - 다국어 지원 국가 추가 : 브라질 (포르투갈어), 브라질 (포르투갈어), 인도네시아
